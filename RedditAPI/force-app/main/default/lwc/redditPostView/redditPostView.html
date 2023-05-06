@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Reddit Post Details">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Reddit Post Name">Reddit Post Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Reddit Post Author">Reddit Post Author</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Reddit Post Thumbnail">Reddit Post Thumbnail</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Reddit Post Selftext">Reddit Post Selftext</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each = {redditPosts} for:item="redditPost">
+                    <tr class="" key = {redditPost.Id}>
+                        <td data-label="Reddit Post Name">
+                            <div class="slds-cell-wrap">{redditPost.Name}</div>
+                        </td>
+                        <td data-label="Reddit Post Author">
+                            <div class="slds-cell-wrap">{redditPost.Author_Full_Name__c}</div>
+                        </td>
+                        <td data-label="Reddit Post Thumbnail">
+                            <div class="slds-cell-wrap">{redditPost.Thumbnail__c}</div>
+                        </td>
+                        <td data-label="Reddit Post Selftext">
+                            <div class="slds-cell-wrap">{redditPost.Selftext__c}</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>
