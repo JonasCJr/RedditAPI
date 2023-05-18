@@ -1,4 +1,31 @@
+<!-- BEGIN - PART 2 -->
+
+<!-- Estou vendo esse exemplo: -->
+<!-- https://techdicer.com/accordion-in-lightning-web-componentslwc/ -->
+
 <template>
+    <lightning-card title="Accordion with Multiple Active Sections" icon-name="standard:account">
+        <lightning-accordion allow-multiple-sections-open
+                            active-section-name="Rijwan"
+                            onsectiontoggle={handleSectionToggle}>
+            <template for:each = {redditPosts} for:item = "redditPost" for:index = "index">
+                <lightning-accordion-section key={redditPost.Id} name={redditPost.Name} label={redditPost.Name}>
+                    <p>
+                        Name: {redditPost.Name}<br/>
+                        Author: {redditPost.Author_Full_Name__c}
+                        <!-- Name : {item.name}<br/> -->
+                        <!-- Type : {item.type} -->
+                    </p>
+                </lightning-accordion-section>  
+            </template>
+        </lightning-accordion>
+    </lightning-card>
+</template>
+
+<!-- END - PART 2 -->
+
+<!-- BEGIN - PART 1 - THIS CODE WORKS WELL -->
+<!--<template>
     <lightning-card title="Reddit Post Details">
         <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
             <thead>
@@ -37,4 +64,5 @@
             </tbody>
         </table>
     </lightning-card>
-</template>
+</template>-->
+<!-- END - PART 1 - THIS CODE WORKS WELL -->
